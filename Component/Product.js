@@ -49,11 +49,12 @@ function Product({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <FlatList
-                data={data}
-                renderItem={({ item }) => {
-                    return (
-                        <View style={{ flexDirection: 'column' }}>
+            <View style={styles.content}>
+                <FlatList
+                    numColumns={2}
+                    data={data}
+                    renderItem={({ item }) => {
+                        return (
                             <TouchableOpacity style={styles.boxProduct}>
                                 <Image style={styles.imgProduct} source={item.image} />
                                 <Text style={styles.titleProduct}>{item.name}</Text>
@@ -69,10 +70,10 @@ function Product({ navigation }) {
                                     <Text style={styles.txtPercent}>{item.percent}</Text>
                                 </View>
                             </TouchableOpacity>
-                        </View>
-                    );
-                }}
-            />
+                        );
+                    }}
+                />
+            </View>
 
             <View style={styles.footer}>
                 <Image style={styles.iconFooter} source={IconMenu} />
@@ -92,7 +93,9 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: '#e5e5e5',
     },
-
+    content: {
+        alignItems: 'center',
+    },
     boxProduct: {
         marginTop: 10,
         marginLeft: 10,

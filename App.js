@@ -23,6 +23,27 @@ export default function App() {
                 }}
             >
                 <Stack.Screen
+                    name="Chat"
+                    component={Chat}
+                    options={{
+                        title: 'Chat',
+                        headerTitleAlign: 'center',
+                        headerTintColor: 'white',
+                        headerLeft: () => (
+                            <Image
+                                style={{ width: 24, height: 24, tintColor: 'white', marginLeft: 20 }}
+                                source={IconArrow}
+                            />
+                        ),
+                        headerRight: () => (
+                            <Image
+                                style={{ width: 24, height: 24, tintColor: 'white', marginRight: 20 }}
+                                source={IconShoppingCart}
+                            />
+                        ),
+                    }}
+                />
+                <Stack.Screen
                     name="Product"
                     component={Product}
                     options={{
@@ -43,27 +64,6 @@ export default function App() {
                                     </TouchableOpacity>
                                 </View>
                             </View>
-                        ),
-                    }}
-                />
-                <Stack.Screen
-                    name="Chat"
-                    component={Chat}
-                    options={{
-                        title: 'Chat',
-                        headerTitleAlign: 'center',
-                        headerTintColor: 'white',
-                        headerLeft: () => (
-                            <Image
-                                style={{ width: 24, height: 24, tintColor: 'white', marginLeft: 20 }}
-                                source={IconArrow}
-                            />
-                        ),
-                        headerRight: () => (
-                            <Image
-                                style={{ width: 24, height: 24, tintColor: 'white', marginRight: 20 }}
-                                source={IconShoppingCart}
-                            />
                         ),
                     }}
                 />
